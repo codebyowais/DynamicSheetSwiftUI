@@ -91,7 +91,7 @@ extension View {
     /// - Parameters:
     ///   - isPresented: will present the sheet when this get's true
     ///   - content: View inside bottom sheet
-    func dynamicSheet<Content: View>(isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content) -> some View {
+    public func dynamicSheet<Content: View>(isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content) -> some View {
         modifier(DynamicSheetModifier(isPresented: isPresented, content: content))
     }
     
@@ -99,7 +99,7 @@ extension View {
     /// - Parameters:
     ///   - Item: will present the sheet when this get's some value assing to it
     ///   - content: View inside bottom sheet
-    func dynamicSheet<Item: Swift.Identifiable, Content: View>(
+    public func dynamicSheet<Item: Swift.Identifiable, Content: View>(
         item binding: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content
     ) -> some View {
